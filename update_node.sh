@@ -1,4 +1,6 @@
 #!/bin/bash
+# running as root user
+# set -x
 
 cd /tmp
 
@@ -18,8 +20,7 @@ if [[ ! -d '/opt/nodejs' ]]; then
     mkdir /opt/nodejs
 fi
 
-mv "node-${latest}-linux-x64 /opt/nodejs/"
-rm "node-${latest}-linux-x64.tar.xz"
+mv node-${latest}-linux-x64 /opt/nodejs/
 
 # update links
 for i in 'node' 'npm' 'npx'; do
